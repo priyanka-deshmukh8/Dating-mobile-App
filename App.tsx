@@ -89,7 +89,18 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <TouchableOpacity style={[styles.button, styles.likeButton]} onPress={() => handleSwipe(currentIndex, true)}>
           <Text style={styles.buttonText}>Like</Text>
         </TouchableOpacity>
-        {/* Add Super Like button */}
+        {/* Add Super Like button */<View style={styles.buttonContainer}>
+  <TouchableOpacity style={[styles.button, styles.dislikeButton]} onPress={() => handleSwipe(currentIndex, false)}>
+    <Text style={styles.buttonText}>Dislike</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={[styles.button, styles.likeButton]} onPress={() => handleSwipe(currentIndex, true)}>
+    <Text style={styles.buttonText}>Like</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={[styles.button, styles.superLikeButton]} onPress={() => handleSuperLike(currentIndex)}>
+    <Text style={styles.buttonText}>Super Like</Text>
+  </TouchableOpacity>
+</View>
+}
       </View>
 
       {/* Display match animation if there is a match */}
